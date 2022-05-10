@@ -1,7 +1,8 @@
 <?php
 
-$dbcon=mysqli_connect("localhost","procyon2022","");
-mysqli_select_db($dbcon,"procyon2022");
+$con = mysqli_connect('localhost', 'root');
+
+mysqli_select_db($con, 'procyon2022');
 
 /*if($dbcon==1)
 {
