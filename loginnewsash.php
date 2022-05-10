@@ -15,13 +15,13 @@ else
 if(isset($_POST['login']))
 {
     $user_name=$_POST['username'];
-    echo $user_name;
+    // echo $user_name;
     $user_pass=$_POST['password'];
     $category=$_POST['event-category'];
 
     if($category=='class-event')
     {
-        $check_user1="select * from crregistrations WHERE username='$user_name'AND password='$user_pass' ";
+        $check_user1="select * from crregistration WHERE username='$user_name'AND password='$user_pass' ";
         $run1=mysqli_query($con,$check_user1);
         $num1 = mysqli_num_rows($run1);
         if(mysqli_num_rows($run1)==1)
