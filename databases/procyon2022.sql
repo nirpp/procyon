@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2022 at 09:48 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Generation Time: May 10, 2022 at 12:23 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `procyon2022`
 --
+CREATE DATABASE IF NOT EXISTS `procyon2022` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `procyon2022`;
 
 -- --------------------------------------------------------
 
@@ -27,6 +29,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `crregistration`
 --
 
+DROP TABLE IF EXISTS `crregistration`;
 CREATE TABLE `crregistration` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
@@ -38,7 +41,6 @@ CREATE TABLE `crregistration` (
 --
 
 INSERT INTO `crregistration` (`id`, `username`, `password`) VALUES
-(1, 'saishbeep', 12345),
 (2, 'Reev Dsouza', 1914036),
 (3, 'Yash Atish Kurade ', 2112086),
 (4, 'Leon Menezes', 1814033),
@@ -59,12 +61,24 @@ INSERT INTO `crregistration` (`id`, `username`, `password`) VALUES
 -- Table structure for table `deptregistrations`
 --
 
+DROP TABLE IF EXISTS `deptregistrations`;
 CREATE TABLE `deptregistrations` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` int(7) NOT NULL,
   `category` varchar(20) NOT NULL DEFAULT 'class'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `deptregistrations`
+--
+
+INSERT INTO `deptregistrations` (`id`, `username`, `password`, `category`) VALUES
+(1, 'Ashish Humraskar', 1811023, 'department'),
+(2, 'Leon Menezes', 1814033, 'department'),
+(3, 'Keenan Q. V. C. Cardozo', 1812013, 'department'),
+(4, 'Kuldeep Naik', 1812079, 'department'),
+(5, 'Atish Naik Gaonkar', 1813036, 'department');
 
 --
 -- Indexes for dumped tables
@@ -77,6 +91,12 @@ ALTER TABLE `crregistration`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `deptregistrations`
+--
+ALTER TABLE `deptregistrations`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -85,6 +105,12 @@ ALTER TABLE `crregistration`
 --
 ALTER TABLE `crregistration`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `deptregistrations`
+--
+ALTER TABLE `deptregistrations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
